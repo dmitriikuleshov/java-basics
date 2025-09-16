@@ -15,3 +15,11 @@ Java implements IO streams within class hierarchies in `java.io` package.
 
 ![ByteStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/ByteStreamsTable.png)
 
+# The character stream classes
+
+Abstract classes on top of their own hierarchies:
+
+ - `Reader` is used for input
+ - `Writer` is used for output
+
+![CharacterStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/CharacterStreamsTable.png)
