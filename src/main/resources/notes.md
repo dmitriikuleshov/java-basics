@@ -47,3 +47,8 @@ All three are byte streams, even though they are typically used to R/W character
 `InputStream` methods:
 
 ![InputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/InputStreamMethods.png)
+
+`OutputStream` methods:
+
+![OutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/OutputStreamMethods.png)
+
