@@ -12,3 +12,6 @@ Java implements IO streams within class hierarchies in `java.io` package.
 
 `InputStream` defines the characteristic common to byte input stream
 `OutputStream` describes the behavior of byte output stream
+
+![ByteStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/ByteStreamsTable.png)
+
