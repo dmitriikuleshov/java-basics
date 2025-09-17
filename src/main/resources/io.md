@@ -138,5 +138,5 @@ but it implements interfaces `DataInput` and `DataOutput` and supports positioni
 
 `void seek(long newPos) throws IOException` - set file pointer position
 
-```java:../com.dmitriikuleshov/javabasics.io/CompFiles.java
+```java:src/main/java/com.dmitriikuleshov/javabasics.io/CompFiles.java
 ```
