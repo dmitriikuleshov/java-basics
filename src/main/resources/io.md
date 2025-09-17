@@ -127,3 +127,17 @@ Each method can throw `IOException`
 `DataInputStream` implements `DataInput` interface, which provides methods for reading all of Java's primitive types.
 
 `DataInputStream(InputStream inputStream)`, inputStream is the stream that is linked to the instance of DataInputStream being created. To read input from a file, you can use `FileInputStream` object.
+
+# Random-Access Files
+
+`RandomAccessFile` is not derived from `InputStream` or `OutputStream`
+
+but it implements interfaces `DataInput` and `DataOutput` and supports positioning request - position a file pointer within the file.
+
+`RandomAccessPointer(String fileName, String access) throws FileNotFoundException` - access can be 'r', 'w', 'rw', 'rws', 'rwd' last two ensure (for local devices) that changes to the file are immediately written to the physical device.
+
+`void seek(long newPos) throws IOException` - set file pointer position
+
+```java
+https://raw.githubusercontent.com/dmitriikuleshov/java-basics/blob/main/src/main/java/com/dmitriikuleshov/javabasics/io/CompFiles.java
+```
