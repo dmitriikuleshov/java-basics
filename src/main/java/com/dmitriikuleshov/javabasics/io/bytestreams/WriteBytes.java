@@ -1,4 +1,4 @@
-package com.dmitriikuleshov.javabasics.io;
+package com.dmitriikuleshov.javabasics.io.bytestreams;
 
 public class WriteBytes {
     public static void main(String[] args) {

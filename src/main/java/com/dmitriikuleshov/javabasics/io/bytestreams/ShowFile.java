@@ -1,8 +1,7 @@
-package com.dmitriikuleshov.javabasics.io;
+package com.dmitriikuleshov.javabasics.io.bytestreams;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IO;
 import java.io.IOException;
 
 

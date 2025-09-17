@@ -9,7 +9,7 @@ of the files to be compared on the command line.
 java CompFile FIRST.TXT SECOND.TXT
 */
 
-package com.dmitriikuleshov.javabasics.io;
+package com.dmitriikuleshov.javabasics.io.bytestreams;
 
 import java.io.FileInputStream;
 import java.io.IOException;

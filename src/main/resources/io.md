@@ -8,14 +8,14 @@ Java implements IO streams within class hierarchies in `java.io` package.
 
 2. Character streams handle IO of characters (use Unicode)
 
-# The byte stream classes
+## The byte stream classes
 
 `InputStream` defines the characteristic common to byte input stream
 `OutputStream` describes the behavior of byte output stream
 
 ![ByteStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/ByteStreamsTable.png)
 
-# The character stream classes
+## The character stream classes
 
 Abstract classes on top of their own hierarchies:
 
@@ -24,7 +24,7 @@ Abstract classes on top of their own hierarchies:
 
 ![CharacterStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/CharacterStreamsTable.png)
 
-# The Predefined Streams
+## The Predefined Streams
 
 `System` from `java.lang` package contains predefined stream variables:
 
@@ -42,7 +42,7 @@ these fields are declared as `public static final` within System
 All three are byte streams, even though they are typically used to R/W characters from and to the console (they are the part of the original specification of Java, which did not include character streams)
 
 
-# Byte streams' methods
+## Byte streams' methods
 
 `InputStream` methods:
 
@@ -52,7 +52,7 @@ All three are byte streams, even though they are typically used to R/W character
 
 ![OutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/OutputStreamMethods.png)
 
-# Reading console input using byte stream (System.in)
+## Reading console input using byte stream (System.in)
 
 `InputStream System.in` has three read methods:
 
@@ -64,7 +64,7 @@ returns:
 
 - `int` number of bytes read, or 1 when attempt is made to read at the end of the stream.
 
-# Writing console output (System.out)
+## Writing console output (System.out)
 
 `PrintStream extends OutputStream`
 
@@ -72,7 +72,7 @@ Using `PrintStream System.out` it is possible to use `print()` and `println()` m
 
 `printf()` and `format()` are used to format data that you output.
 
-# R/W files using byte streams
+## R/W files using byte streams
 
 Inputting from a File:
 
@@ -95,7 +95,7 @@ Writing a File:
 `void close() throws IOException` - close file
 
 
-# Try-with-resources
+## Try-with-resources
 
 `try-with-resources` can be used since JDK7, and it is also possible for the resource specification of the try to consist of a variable that has been declared initialized earlier in the program. This variable must be effectively final: it has not been assigned a new value after being given its initial value.
 
@@ -106,7 +106,7 @@ However, with a `try-with-resources` statement, the second exception is *suppres
 It is not, however, lost. Instead, it is added to the list of suppressed exceptions associated with the first exception.
 This list can be obtained by use of the `getSuppressed()` method defined by `Throwable`.
 
-# Reading and writing binary data
+## Reading and writing binary data
 
 It is possible to create a file that contains `ints`, `doubles`, `shorts`.
 
@@ -138,5 +138,4 @@ but it implements interfaces `DataInput` and `DataOutput` and supports positioni
 
 `void seek(long newPos) throws IOException` - set file pointer position
 
-```java:src/main/java/com.dmitriikuleshov/javabasics.io/CompFiles.java
-```
+# Using Java's Character-Based Streams
