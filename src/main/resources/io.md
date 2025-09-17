@@ -128,7 +128,7 @@ Each method can throw `IOException`
 
 `DataInputStream(InputStream inputStream)`, inputStream is the stream that is linked to the instance of DataInputStream being created. To read input from a file, you can use `FileInputStream` object.
 
-# Random-Access Files
+## Random-Access Files
 
 `RandomAccessFile` is not derived from `InputStream` or `OutputStream`
 
