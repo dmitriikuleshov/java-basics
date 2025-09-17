@@ -139,3 +139,13 @@ but it implements interfaces `DataInput` and `DataOutput` and supports positioni
 `void seek(long newPos) throws IOException` - set file pointer position
 
 # Using Java's Character-Based Streams
+
+abstract classes `Reader` and `Writer`. Most of their methods can throw IOException on error.
+
+![Reader](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/Reader.png)
+
+![Writer](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/Writer.png)
+
+## Console input using character streams
+
+
