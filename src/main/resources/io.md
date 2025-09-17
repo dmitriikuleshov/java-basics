@@ -148,4 +148,65 @@ abstract classes `Reader` and `Writer`. Most of their methods can throw IOExcept
 
 ## Console input using character streams
 
+### Old approach (Before JDK17)
 
+Since `System.in` is a byte stream, we need to wrap it inside some type of `Reader`. `BufferedReader` is the best class for reading console.
+
+`BufferedReader(Reader inputReader)`
+
+inputReader is the stream that is linked to the instance of `BufferedReader` that is being created. You cannot construct a `BufferedReader` directly from  `System.in` because it is an `InputStream`, not `Reader`. Instead, you must first convert it into a character stream. To do this, you will use InputStreamReader.
+
+Beginning with JDK17 the precise way to obtain an `InputStreamReader` linked to `System.in` has changed. In the past it was common to use the following constructor:
+
+`InputStreamReader(InputStream inputStream)`
+
+Thus, commonly used approach to creating a `BufferedReader` connected to the keyboard was:
+
+```java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+```
+
+`br` is a character-based stream that is linked to the console through `System.in`
+
+### New approach (Since JDK17)
+
+It is now recommended to explicitly specify the charset associated with the console when creating `InputStreamReader`
+
+A `charset` defines the way that bytes are mapped to characters. Normally, when a charset is not specified, the default
+charset of the JVM is used. However, in the case of the console, the charset used for console input may differ from this
+default charset. Thus, it's now recommended that this form of `InputStreamReader` constructor be used:
+
+`InputStreamReader(InputStream inputStream, Charset charset)`
+
+For `charset`, use the charset associated with the console. To get charset, use `charset()`, new method added by JDK17 
+to the Console class. You obtain a console object using `System.console()`, which return reference to the console or 
+`null` if no console is present.
+
+```java
+Console con = System.console();
+if (con == null) return;
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in, con.charset()));
+```
+
+if we know that a console will be present:
+
+```java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in, System.console().charset()));
+```
+
+## Reading characters
+
+read methods in `BufferedStream`:
+
+- `int read( ) throws IOException` - reads a single Unicode character, returns -1 when an attempt is made to read at the end of the stream.
+
+- `int read(char[ ] data) throws IOException` - reads and puts chars into data until either the array is full, the end of the stream is reached, or an error occurs.
+
+- `int read(char[ ] data, int start, int max) throws IOException` - reads input to data beginning at start up to max characters are stored. Returns a number of characters read or -1 when an attempt is made to read at the end of the stream.
+
+- `String readLine()` - returns a `String` object that contains the characters read. null if an attempt is made to read when at the end of the stream.
+
+All throw `IOException` on error
+
+![ConsoleInput](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/ConsoleIputt.png)
