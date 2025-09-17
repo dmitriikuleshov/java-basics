@@ -13,7 +13,7 @@ Java implements IO streams within class hierarchies in `java.io` package.
 `InputStream` defines the characteristic common to byte input stream
 `OutputStream` describes the behavior of byte output stream
 
-![ByteStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/ByteStreamsTable.png)
+![ByteStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/ByteStreamsTable.png)
 
 # The character stream classes
 
@@ -22,7 +22,7 @@ Abstract classes on top of their own hierarchies:
  - `Reader` is used for input
  - `Writer` is used for output
 
-![CharacterStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/CharacterStreamsTable.png)
+![CharacterStreamsTable](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/CharacterStreamsTable.png)
 
 # The Predefined Streams
 
@@ -46,11 +46,11 @@ All three are byte streams, even though they are typically used to R/W character
 
 `InputStream` methods:
 
-![InputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/InputStreamMethods.png)
+![InputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/InputStreamMethods.png)
 
 `OutputStream` methods:
 
-![OutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/OutputStreamMethods.png)
+![OutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/OutputStreamMethods.png)
 
 # Reading console input using byte stream (System.in)
 
@@ -112,8 +112,18 @@ It is possible to create a file that contains `ints`, `doubles`, `shorts`.
 
 `DataInputStream` and `DataOutputStream` are used to read and write binary values of the Java primitive types
 
-`DataOutputStream` implements `DataOutput` interface that defines that write all of Java primitive types to a file.
+`DataOutputStream` implements `DataOutput` interface, which provides methods that write all of Java's primitive types to a file.
 
 Data is written using its internal, binary format.
 
-![DataOutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/DataOutputStream.png)
+Each method can throw `IOException`
+
+![DataOutputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/DataOutputStream.png)
+
+`DataOutputStream(OutputStream outputStream)` outputStream is a stream to which data is written, e.g. FileOutputStream to write to a file.
+
+![DataInputStreamMethods](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/DataInputStream.png)
+
+`DataInputStream` implements `DataInput` interface, which provides methods for reading all of Java's primitive types.
+
+`DataInputStream(InputStream inputStream)`, inputStream is the stream that is linked to the instance of DataInputStream being created. To read input from a file, you can use `FileInputStream` object.
