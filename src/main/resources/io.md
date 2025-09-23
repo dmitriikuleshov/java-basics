@@ -210,3 +210,5 @@ read methods in `BufferedStream`:
 All throw `IOException` on error
 
 ![ConsoleInput](https://github.com/dmitriikuleshov/java-basics/blob/main/src/main/resources/static/images/io/ConsoleIputt.png)
+
+https://github.com/dmitriikuleshov/java-basics/blob/a2fb6f0b9facf24f2c5d3fafa3bc76e28f4bf316/src/main/java/com/dmitriikuleshov/javabasics/io/bytestreams/ReadBytes.java#L1
